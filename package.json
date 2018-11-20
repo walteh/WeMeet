@@ -1,0 +1,22 @@
+{
+  "name": "wemeet",
+  "version": "1.0.0",
+  "description": "Project for CSC 3380 Fall 2018.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walter-scott/WeMeet.git"
+  },
+  "author": "Walter Scott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walter-scott/WeMeet/issues"
+  },
+  "homepage": "https://github.com/walter-scott/WeMeet#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
