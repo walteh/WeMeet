@@ -19,12 +19,14 @@ public class Login extends javax.swing.JDialog {
     ArrayList<String> passwords = new ArrayList<>();
     String userPass;
     String userUsername;
+    java.awt.Frame p;
     
     /**
      * Creates new form Login
      */
     public Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        p = parent;
         this.passwords = new ArrayList();
         initComponents();
     }
@@ -190,21 +192,21 @@ public class Login extends javax.swing.JDialog {
         userUsername = usernameText.getText();
         userPass = passwordText.getText();
         
-        
-        System.out.println("userUsername: " + userUsername);
-        System.out.println("userPass: " + userPass);
-        
         boolean isUser = usernames.contains(userUsername);
         if(isUser) {
             invalid_text.setText("username already exists");
         } else {
-            System.out.println("usernames: " + usernames.toString());
-        System.out.println("passwords: " + passwords.toString());
             usernames.add(userUsername);
             passwords.add(userPass);
         }
         System.out.println("usernames: " + usernames.toString());
         System.out.println("passwords: " + passwords.toString());
+        
+//        String[] test = new String[0];
+//        Home.main(test);
+        setVisible(false);
+        HomePage s = new HomePage();
+        
         
     }//GEN-LAST:event_signupButtonActionPerformed
 
