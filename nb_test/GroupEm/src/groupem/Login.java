@@ -16,6 +16,7 @@ import static groupem.GroupEm.eventss;
 import static groupem.GroupEm.getUserIndex;
 import static groupem.GroupEm.updateUserEvents;
 import static groupem.GroupEm.userEventNames;
+import static java.awt.Color.green;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
@@ -187,7 +188,11 @@ public class Login extends javax.swing.JDialog {
         
         System.out.println("Username and Password Verified");
         loggedIn = true;
+        System.out.println("userEventNames before: " + Arrays.toString(userEventNames));
+        //System.out.println("userEvents before: " + userEvents.toString());
         updateUserEvents(userUsername);
+        System.out.println("userEventNames after: " + Arrays.toString(userEventNames));
+        //System.out.println("userEvent after: " + userEvents.toString());
         setVisible(false);
         HomePage hp4 = new HomePage();
         hp4.setVisible(loggedIn);
@@ -219,16 +224,19 @@ public class Login extends javax.swing.JDialog {
         } else {
             usernames.add(userUsername);
             passwords.add(userPass);
+            invalid_text.setForeground(green);
+            invalid_text.setText("You may now sign in.");
             
-            
-            updateUserEvents(userUsername);
-            System.out.println("username: " + userUsername);
-            System.out.println("yo: " + Arrays.toString(userEventNames));
-            loggedIn = true;
-            setVisible(false);
-            HomePage hp3 = new HomePage();
-            hp3.setVisible(loggedIn);
-            //hp.setVisible(loggedIn);
+//            
+//            
+//            updateUserEvents(userUsername);
+//            System.out.println("username: " + userUsername);
+//            System.out.println("yo: " + Arrays.toString(userEventNames));
+//            loggedIn = true;
+//            setVisible(false);
+//            HomePage hp3 = new HomePage();
+//            hp3.setVisible(loggedIn);
+//            //hp.setVisible(loggedIn);
         }
         System.out.println("usernames: " + usernames.toString());
         System.out.println("passwords: " + passwords.toString());

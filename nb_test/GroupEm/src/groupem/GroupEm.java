@@ -24,7 +24,7 @@ public class GroupEm {
     public static ArrayList<String> usernames = new ArrayList<>();
     public static ArrayList<String> passwords = new ArrayList<>();
     public static ArrayList<Event> eventss = new ArrayList<>();
-    public static ArrayList<Event> userEvents = new ArrayList<>();
+    //public static ArrayList<Event> userEvents = new ArrayList<>();
     public static String[] userEventNames = new String[0];
     public static String userPass;
     public static String userUsername;
@@ -105,17 +105,32 @@ public class GroupEm {
     }
     
     public static void updateUserEvents(String user){
+//        int count = 0;
+//        for(Event e : eventss){
+//             if(e.invites.contains(user)) count++;
+//        }
+//        String[] temp = new String[count];
+//        for(int e = 0; e < temp.length; e++){
+//             if(eventss.get(e).invites.contains(user)) {
+//                // userEvents.add(eventss.get(e));
+//                 temp[e] = eventss.get(e).name;
+//             }
+//             
+//        }
+//        userEventNames = temp;
         int count = 0;
+        ArrayList<String> templist = new ArrayList<>();
         for(Event e : eventss){
-             if(e.invites.contains(user)) count++;
-        }
-        String[] temp = new String[count];
-        for(int e = 0; e < temp.length; e++){
-             if(eventss.get(e).invites.contains(user)) {
-                 userEvents.add(eventss.get(e));
-                 temp[e] = eventss.get(e).name;
+             for(String s : e.invites){
+                 if (s.equals(user)) {
+                     count++;
+                     templist.add(e.name);
+                 }
              }
-             
+        }
+        String[] temp = new String[templist.size()];
+        for(int i = 0; i < temp.length; i++){
+             temp[i] = templist.get(i);
         }
         userEventNames = temp;
     }

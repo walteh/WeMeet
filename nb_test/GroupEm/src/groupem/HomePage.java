@@ -7,10 +7,9 @@ package groupem;
 
 import static groupem.GroupEm.eventss;
 import static groupem.GroupEm.getEvent;
-import static groupem.GroupEm.hp;
+import static groupem.GroupEm.userUsername;
 import static groupem.GroupEm.loggedIn;
 import static groupem.GroupEm.pan;
-import static groupem.GroupEm.userEvents;
 import static groupem.GroupEm.userEventNames;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -161,6 +160,9 @@ public class HomePage extends javax.swing.JFrame {
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         dispose();
+        //userEvents = null;
+        userEventNames = null;
+        userUsername = null;
         loggedIn = false;
         Login l = new Login(this, true);
         l.addWindowListener(new WindowAdapter() {
