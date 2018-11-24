@@ -74,6 +74,12 @@ public class HomePage extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(500, 500));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                formComponentMoved(evt);
+            }
+        });
 
         jList1.setFont(new java.awt.Font("Helvetica", 0, 12)); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -174,6 +180,11 @@ public class HomePage extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void formComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentMoved
+        System.out.println("HOMEPAGE ---  X: " + getX() + "   Y: " + getY() + "    height: " + this.getSize().height +  "  width: " + this.getSize().width);
+        //HOMEPAGE ---  X: 623   Y: 318    height: 451  width: 599
+    }//GEN-LAST:event_formComponentMoved
 
 
     /**
