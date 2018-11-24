@@ -6,6 +6,8 @@
 package groupem;
 
 import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -78,6 +80,8 @@ public class GroupEm {
         
         Login log = new Login(hp,true);
         log.setLocation(797, 426);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        log.setLocation(dim.width/2-log.getSize().width/2, dim.height/2-log.getSize().height/2);
         log.addWindowListener(new WindowAdapter() {
             public void windowClosed(WindowEvent e) {
                 System.exit(0);
