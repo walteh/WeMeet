@@ -17,6 +17,7 @@ import static groupem.GroupEm.getUserIndex;
 import static groupem.GroupEm.updateUserEvents;
 import static groupem.GroupEm.userEventNames;
 import static java.awt.Color.green;
+import static java.awt.Color.red;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
@@ -63,6 +64,7 @@ public class Login extends javax.swing.JDialog {
         signupButton = new javax.swing.JButton();
         invalid_text = new javax.swing.JLabel();
         passwordText = new javax.swing.JPasswordField();
+        close = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -103,28 +105,40 @@ public class Login extends javax.swing.JDialog {
         invalid_text.setForeground(new java.awt.Color(225, 0, 0));
         invalid_text.setText("             ");
 
+        close.setText("close");
+        close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(58, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(signupButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(signinButton))
-                    .addComponent(invalid_text)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(53, 53, 53))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(signupButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(signinButton))
+                            .addComponent(invalid_text)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(53, 53, 53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(close)
+                        .addGap(113, 113, 113))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +159,9 @@ public class Login extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(signinButton)
                     .addComponent(signupButton))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(close)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -165,23 +181,38 @@ public class Login extends javax.swing.JDialog {
         
         
         boolean isUser = usernames.contains(userUsername);
-        if (userUsername.equalsIgnoreCase("") && userPass.equalsIgnoreCase(""))
+        if (userUsername.equalsIgnoreCase("") && userPass.equalsIgnoreCase("")){
+            invalid_text.setForeground(red.darker());
             invalid_text.setText("Please Enter Your Username and Password");
-        else if (userUsername.equalsIgnoreCase(""))
+        }
+            
+        else if (userUsername.equalsIgnoreCase("")){
+            invalid_text.setForeground(red.darker());
             invalid_text.setText("Please Enter Your Username");
-        else if (userPass.equalsIgnoreCase(""))
+            
+        }
+            
+        else if (userPass.equalsIgnoreCase("")){
+            invalid_text.setForeground(red.darker());
             invalid_text.setText("Please Enter Your Password");
-        else if(!isUser)
+        }
+            
+        else if(!isUser){
+            invalid_text.setForeground(red.darker());
             invalid_text.setText("Incorrect Username or Password");
+        }
+            
       
         int userIndex = getUserIndex(userUsername);
         System.out.println("INDEX: "+ userIndex);
         boolean correctPassword = passwords.get(userIndex).equals(userPass);
         if(userPass.contentEquals("")){
+            invalid_text.setForeground(red.darker());
             invalid_text.setText("Hello, " + userUsername + ". Please enter your password");
             return;
         }
         if(!correctPassword) {
+            invalid_text.setForeground(red.darker());
             invalid_text.setText("Incorrect Username or Password");
             return;
         }
@@ -211,20 +242,24 @@ public class Login extends javax.swing.JDialog {
         
         boolean isUser = usernames.contains(userUsername);
         if (userUsername.equalsIgnoreCase("") && userPass.equalsIgnoreCase("")){
+            invalid_text.setForeground(red.darker());
             invalid_text.setText("You must enter a username and password");
         }
         else if(userUsername.equalsIgnoreCase("")){
+            invalid_text.setForeground(red.darker());
             invalid_text.setText("You must enter a username");
         }
         else if(userPass.equalsIgnoreCase("")){
+            invalid_text.setForeground(red.darker());
             invalid_text.setText("You must enter a password");
         }
         else if(isUser) {
+            invalid_text.setForeground(red.darker());
             invalid_text.setText("Username already exists");
         } else {
             usernames.add(userUsername);
             passwords.add(userPass);
-            invalid_text.setForeground(green);
+            invalid_text.setForeground(green.darker());
             invalid_text.setText("You may now sign in.");
             
 //            
@@ -252,6 +287,10 @@ public class Login extends javax.swing.JDialog {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_usernameTextFocusLost
+
+    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_closeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,6 +335,7 @@ public class Login extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton close;
     private javax.swing.JLabel invalid_text;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
