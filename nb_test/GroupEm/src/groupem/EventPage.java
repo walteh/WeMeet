@@ -5,6 +5,7 @@
  */
 package groupem;
 
+import static groupem.GroupEm.hp;
 import static groupem.GroupEm.userUsername;
 
 /**
@@ -48,12 +49,13 @@ public class EventPage extends javax.swing.JFrame{
         eventDateText2 = new javax.swing.JLabel();
         eventInviteesText = new javax.swing.JLabel();
         eventDateLabel3 = new javax.swing.JLabel();
-        eventCommentsText = new javax.swing.JLabel();
         back_from_event = new javax.swing.JButton();
         add_comment = new javax.swing.JButton();
         add_invite = new javax.swing.JButton();
         inviteText = new javax.swing.JTextField();
         commentText = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        eventCommentsText = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,9 +80,12 @@ public class EventPage extends javax.swing.JFrame{
         eventDateLabel3.setText("Comments:");
         eventDateLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        eventCommentsText.setText("jLabel1");
-
         back_from_event.setText("back");
+        back_from_event.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_from_eventActionPerformed(evt);
+            }
+        });
 
         add_comment.setText("comment");
         add_comment.addActionListener(new java.awt.event.ActionListener() {
@@ -96,14 +101,23 @@ public class EventPage extends javax.swing.JFrame{
             }
         });
 
-        inviteText.setText("enter_invite");
+        inviteText.setPreferredSize(new java.awt.Dimension(200, 25));
+        inviteText.setSize(new java.awt.Dimension(200, 25));
         inviteText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inviteTextActionPerformed(evt);
             }
         });
 
-        commentText.setText("enter_comment");
+        commentText.setPreferredSize(new java.awt.Dimension(200, 25));
+        commentText.setSize(new java.awt.Dimension(200, 25));
+
+        eventCommentsText.setEditable(false);
+        eventCommentsText.setBackground(new java.awt.Color(232, 232, 232));
+        eventCommentsText.setColumns(20);
+        eventCommentsText.setRows(5);
+        eventCommentsText.setAutoscrolls(false);
+        jScrollPane1.setViewportView(eventCommentsText);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,17 +127,12 @@ public class EventPage extends javax.swing.JFrame{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(add_comment)
-                        .addGap(18, 18, 18)
-                        .addComponent(commentText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(back_from_event)
                         .addGap(53, 53, 53)
                         .addComponent(eventTitle))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(eventDateLabel)
                                 .addGap(67, 67, 67)
@@ -143,19 +152,18 @@ public class EventPage extends javax.swing.JFrame{
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(eventDateLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(inviteText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(eventInviteesText)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(add_invite)
+                                .addComponent(add_invite)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inviteText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(eventInviteesText, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
                                 .addComponent(eventDateLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(eventCommentsText, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(75, Short.MAX_VALUE))
+                                .addComponent(add_comment)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(commentText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1))))
+                .addContainerGap(193, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,24 +187,26 @@ public class EventPage extends javax.swing.JFrame{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(eventDateLabel1)
                     .addComponent(eventCreatorText))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(eventDateText2)
-                    .addComponent(add_invite)
-                    .addComponent(inviteText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(add_invite)
+                            .addComponent(eventDateLabel2)
+                            .addComponent(inviteText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(eventDateText2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eventDateLabel2)
-                    .addComponent(eventInviteesText))
+                .addComponent(eventInviteesText, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(add_comment)
-                    .addComponent(commentText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(eventDateLabel3)
-                    .addComponent(eventCommentsText, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43))
+                    .addComponent(add_comment)
+                    .addComponent(commentText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -212,7 +222,7 @@ public class EventPage extends javax.swing.JFrame{
             eventCommentsText.setText(event.commentToString());
             System.out.println(event.commentToString());
             commentText.setText("");
-            commentText.setSize(WIDTH, HEIGHT);
+            commentText.setSize(200, 25);
         }
     }//GEN-LAST:event_add_commentActionPerformed
 
@@ -222,8 +232,14 @@ public class EventPage extends javax.swing.JFrame{
             eventInviteesText.setText(event.inviteeToString());
             System.out.println(event.inviteeToString());
             inviteText.setText("");
+            inviteText.setSize(200, 25);
         }
     }//GEN-LAST:event_add_inviteActionPerformed
+
+    private void back_from_eventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_from_eventActionPerformed
+        setVisible(false);
+        hp.setVisible(true);
+    }//GEN-LAST:event_back_from_eventActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,7 +293,7 @@ public class EventPage extends javax.swing.JFrame{
     private javax.swing.JButton add_invite;
     private javax.swing.JButton back_from_event;
     private javax.swing.JTextField commentText;
-    private javax.swing.JLabel eventCommentsText;
+    private javax.swing.JTextArea eventCommentsText;
     private javax.swing.JLabel eventCreatorText;
     private javax.swing.JLabel eventDateLabel;
     private javax.swing.JLabel eventDateLabel1;
@@ -290,5 +306,6 @@ public class EventPage extends javax.swing.JFrame{
     private javax.swing.JLabel eventInviteesText;
     private javax.swing.JLabel eventTitle;
     private javax.swing.JTextField inviteText;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

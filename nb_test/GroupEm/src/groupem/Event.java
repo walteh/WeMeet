@@ -36,7 +36,7 @@ public class Event {
     public String commentToString(){
         String output = "";
         for(int i = comments.size() - 1; i >= 0; i--){
-            output += String.format("%S%n", comments.get(i));
+            output += String.format("%s%n", comments.get(i));
         }
         return output;
     }
@@ -48,7 +48,7 @@ public class Event {
     public String inviteeToString(){
         String output = "";
         for(int i = invites.size() - 1; i >= 0; i--){
-            if (i>0) output += String.format("%S, ", invites.get(i));
+            if (i>0) output += String.format("%s, ", invites.get(i));
             else output += invites.get(i);
         }
         return output;

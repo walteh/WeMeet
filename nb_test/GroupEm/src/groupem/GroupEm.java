@@ -59,9 +59,9 @@ public class GroupEm {
         two.addInvitee("walter");
         two.addInvitee("ian");
         two.addInvitee("leigh");
-        one.addComment("walter", "yo2");
-        one.addComment("ian", "sup2");
-        one.addComment("leigh","bro2");
+        two.addComment("walter", "yo2");
+        two.addComment("ian", "sup2");
+        two.addComment("leigh","bro2");
         eventss.add(two);
         
         
@@ -69,9 +69,9 @@ public class GroupEm {
         three.addInvitee("walter");
         three.addInvitee("ian");
         three.addInvitee("leigh");
-        one.addComment("walter", "yo3");
-        one.addComment("ian", "sup3");
-        one.addComment("leigh","bro3");
+        three.addComment("walter", "yo3");
+        three.addComment("ian", "sup3");
+        three.addComment("leigh","bro3");
         eventss.add(three);
         
         
