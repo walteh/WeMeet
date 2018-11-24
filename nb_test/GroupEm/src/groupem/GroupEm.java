@@ -46,34 +46,34 @@ public class GroupEm {
         
         
         
-        Event one = new Event("carnival", "1", "1", "1");
+        Event one = new Event("Carnival", "walter", "State Fair trip 2k18", "11/30/18");
         one.addInvitee("walter");
         one.addInvitee("ian");
         one.addInvitee("leigh");
-        one.addComment("walter", "yo1");
-        one.addComment("ian", "sup1");
-        one.addComment("leigh","bro1");
+        one.addComment("We are going to have so much fun!", "walter");
+        one.addComment("I am sick.", "ian");
+        one.addComment("Too bad! You're coming!!!","leigh");
         eventss.add(one);
         
         
 
-        Event two = new Event("hot dog contest", "2", "2", "2");
+        Event two = new Event("Hot Dog Contest", "ian", "Fat Santa's Eating Extraviganza", "12/25/18");
         two.addInvitee("walter");
         two.addInvitee("ian");
         two.addInvitee("leigh");
-        two.addComment("walter", "yo2");
-        two.addComment("ian", "sup2");
-        two.addComment("leigh","bro2");
+        two.addComment("what?", "walter");
+        two.addComment("I'm down.", "leigh");
+        two.addComment("We have to win.","ian");
         eventss.add(two);
         
         
-        Event three = new Event("funeral", "3", "3", "3");
+        Event three = new Event("Presentation", "leigh", "CSC 3380 Project Presentation", "11/27/18");
         three.addInvitee("walter");
         three.addInvitee("ian");
         three.addInvitee("leigh");
-        three.addComment("walter", "yo3");
-        three.addComment("ian", "sup3");
-        three.addComment("leigh","bro3");
+        three.addComment("Are you guys ready?", "leigh");
+        three.addComment("I'm a little nervous.", "walter");
+        three.addComment("It all comes down to this!","ian");
         eventss.add(three);
         
         
