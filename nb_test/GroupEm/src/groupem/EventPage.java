@@ -237,7 +237,8 @@ public class EventPage extends javax.swing.JFrame{
     }//GEN-LAST:event_add_inviteActionPerformed
 
     private void back_from_eventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_from_eventActionPerformed
-        setVisible(false);
+        dispose();
+        hp = new HomePage();
         hp.setVisible(true);
     }//GEN-LAST:event_back_from_eventActionPerformed
 
