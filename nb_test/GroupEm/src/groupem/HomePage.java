@@ -21,6 +21,8 @@ import javax.swing.event.ListDataListener;
 public class HomePage extends javax.swing.JFrame {
     
     public static ArrayList<Event> events = new ArrayList<>();
+    
+    
 
     /**
      * Creates new form HomePage
