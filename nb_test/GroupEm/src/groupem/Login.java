@@ -56,7 +56,7 @@ public class Login extends javax.swing.JDialog {
         signinButton = new javax.swing.JButton();
         signupButton = new javax.swing.JButton();
         invalid_text = new javax.swing.JLabel();
-        passwordText = new javax.swing.JTextField();
+        passwordText = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -65,7 +65,6 @@ public class Login extends javax.swing.JDialog {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("GroupEm");
 
-        usernameText.setText("Enter Username...");
         usernameText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 usernameTextFocusLost(evt);
@@ -98,55 +97,33 @@ public class Login extends javax.swing.JDialog {
         invalid_text.setForeground(new java.awt.Color(225, 0, 0));
         invalid_text.setText("             ");
 
-        passwordText.setText("Enter Username...");
-        passwordText.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                passwordTextInputMethodTextChanged(evt);
-            }
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
-        });
-        passwordText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordTextActionPerformed(evt);
-            }
-        });
-        passwordText.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                passwordTextKeyTyped(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(123, 123, 123)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(58, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(signupButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(signinButton))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(62, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(invalid_text)
-                .addGap(126, 126, 126))
+                        .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(signupButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(signinButton))
+                    .addComponent(invalid_text)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(54, 54, 54)
                 .addComponent(jLabel1)
                 .addGap(4, 4, 4)
                 .addComponent(invalid_text)
@@ -156,13 +133,13 @@ public class Login extends javax.swing.JDialog {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel3)
+                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(signinButton)
                     .addComponent(signupButton))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         pack();
@@ -179,14 +156,23 @@ public class Login extends javax.swing.JDialog {
         userPass = passwordText.getText();
         
         boolean isUser = usernames.contains(userUsername);
-        if(!isUser) {
-            invalid_text.setText("invalid username");
-            return;
-        }
+        if (userUsername.equalsIgnoreCase("") && userPass.equalsIgnoreCase(""))
+            invalid_text.setText("Please Enter Your Username and Password");
+        else if (userUsername.equalsIgnoreCase(""))
+            invalid_text.setText("Please Enter Your Username");
+        else if (userPass.equalsIgnoreCase(""))
+            invalid_text.setText("Please Enter Your Password");
+        else if(!isUser)
+            invalid_text.setText("Incorrect Username or Password");
+      
         int userIndex = usernames.indexOf(userUsername);
         boolean correctPassword = passwords.get(userIndex).equals(userPass);
+        if(userPass.contentEquals("")){
+            invalid_text.setText("Hello, " + userUsername + ". Please enter your password");
+            return;
+        }
         if(!correctPassword) {
-            invalid_text.setText("Hello, " + userUsername + ". The password you entered is incorrect.");
+            invalid_text.setText("Incorrect Username or Password");
             return;
         }
         
@@ -242,26 +228,10 @@ public class Login extends javax.swing.JDialog {
         
     }//GEN-LAST:event_signupButtonActionPerformed
 
-    private void passwordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextActionPerformed
-        // TODO add your handling code here:
-        //userPass = passwordText.getText();
-        
-    }//GEN-LAST:event_passwordTextActionPerformed
-
     private void usernameTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFocusLost
         // TODO add your handling code here:
         
     }//GEN-LAST:event_usernameTextFocusLost
-
-    private void passwordTextInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_passwordTextInputMethodTextChanged
-        // TODO add your handling code here:
-        //userPass = passwordText.getText();
-    }//GEN-LAST:event_passwordTextInputMethodTextChanged
-
-    private void passwordTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordTextKeyTyped
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_passwordTextKeyTyped
 
     /**
      * @param args the command line arguments
@@ -310,7 +280,7 @@ public class Login extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField passwordText;
+    private javax.swing.JPasswordField passwordText;
     private javax.swing.JButton signinButton;
     private javax.swing.JButton signupButton;
     private javax.swing.JTextField usernameText;

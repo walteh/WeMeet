@@ -41,25 +41,37 @@ public class GroupEm {
         passwords.add("a");
         passwords.add("w");
         
-        ArrayList<String> in1 = new ArrayList<>();
-        in1.add("walter");
-        in1.add("ian");
-        in1.add("leigh");
-        Event one = new Event("carnival", "1", "1", "1", in1);
+        
+        
+        
+        Event one = new Event("carnival", "1", "1", "1");
+        one.addInvitee("walter");
+        one.addInvitee("ian");
+        one.addInvitee("leigh");
+        one.addComment("walter", "yo1");
+        one.addComment("ian", "sup1");
+        one.addComment("leigh","bro1");
         eventss.add(one);
         
-        ArrayList<String> in2 = new ArrayList<>();
-        in2.add("walter");
-        in2.add("ian");
-        in2.add("leigh");
-        Event two = new Event("hot dog contest", "2", "2", "2", in2);
+        
+
+        Event two = new Event("hot dog contest", "2", "2", "2");
+        two.addInvitee("walter");
+        two.addInvitee("ian");
+        two.addInvitee("leigh");
+        one.addComment("walter", "yo2");
+        one.addComment("ian", "sup2");
+        one.addComment("leigh","bro2");
         eventss.add(two);
         
-        ArrayList<String> in3 = new ArrayList<>();
-        in3.add("walter");
-        in3.add("ian");
-        in3.add("leigh");
-        Event three = new Event("funeral", "3", "3", "3", in3);
+        
+        Event three = new Event("funeral", "3", "3", "3");
+        three.addInvitee("walter");
+        three.addInvitee("ian");
+        three.addInvitee("leigh");
+        one.addComment("walter", "yo3");
+        one.addComment("ian", "sup3");
+        one.addComment("leigh","bro3");
         eventss.add(three);
         
         
@@ -83,6 +95,13 @@ public class GroupEm {
         
         
         
+    }
+    
+    public static Event getEvent(String eventName){
+        for(Event e : eventss){
+            if(e.name.equals(eventName)) return e;
+        }
+        return null;
     }
     
     public static void updateUserEvents(String user){

@@ -6,6 +6,7 @@
 package groupem;
 
 import static groupem.GroupEm.eventss;
+import static groupem.GroupEm.getEvent;
 import static groupem.GroupEm.pan;
 import static groupem.GroupEm.userEvents;
 import static groupem.GroupEm.userEventNames;
@@ -74,6 +75,11 @@ public class HomePage extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jList1ValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(jList1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,6 +101,19 @@ public class HomePage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+        // TODO add your handling code here:
+        setVisible(false);
+        String s = jList1.getSelectedValue();
+        System.out.println(s);
+        
+        Event ev = getEvent(s);
+        System.out.println(ev);
+        EventPage e = new EventPage(ev);
+        e.setVisible(true);
+        
+    }//GEN-LAST:event_jList1ValueChanged
 
 
     /**

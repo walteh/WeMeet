@@ -19,12 +19,12 @@ public class Event {
     ArrayList<String> invites = new ArrayList<>();
     ArrayList<String> comments = new ArrayList<>();
     
-    public Event(String n, String c, String desc, String dat, ArrayList i){
+    public Event(String n, String c, String desc, String dat){
         name = n;
         date = dat;
         description = desc;
         creator = c;
-        invites = i;
+        //invites = i;
         
     }
     
@@ -37,6 +37,19 @@ public class Event {
         String output = "";
         for(int i = comments.size() - 1; i >= 0; i--){
             output += String.format("%S%n", comments.get(i));
+        }
+        return output;
+    }
+    
+    public void addInvitee(String user){
+        invites.add(user);
+    }
+    
+    public String inviteeToString(){
+        String output = "";
+        for(int i = invites.size() - 1; i >= 0; i--){
+            if (i>0) output += String.format("%S, ", invites.get(i));
+            else output += invites.get(i);
         }
         return output;
     }
