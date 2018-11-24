@@ -58,6 +58,11 @@ public class EventPage extends javax.swing.JFrame{
         eventCommentsText = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                formComponentMoved(evt);
+            }
+        });
 
         eventTitle.setText("jLabel1");
 
@@ -237,10 +242,16 @@ public class EventPage extends javax.swing.JFrame{
     }//GEN-LAST:event_add_inviteActionPerformed
 
     private void back_from_eventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_from_eventActionPerformed
+        
+        HomePage hp5 = new HomePage();
+        hp5.setLocationRelativeTo(this);
+        hp5.setVisible(true);
         dispose();
-        hp = new HomePage();
-        hp.setVisible(true);
     }//GEN-LAST:event_back_from_eventActionPerformed
+
+    private void formComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentMoved
+        System.out.println("Event Page ---  X: " + getX() + "   Y: " + getY() + "    height: " + this.getSize().height +  "  width: " + this.getSize().width);
+    }//GEN-LAST:event_formComponentMoved
 
     /**
      * @param args the command line arguments

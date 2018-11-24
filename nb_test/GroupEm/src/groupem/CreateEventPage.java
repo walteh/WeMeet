@@ -46,6 +46,8 @@ public class CreateEventPage extends javax.swing.JFrame {
         cancelCreate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(682, 318));
+        setPreferredSize(new java.awt.Dimension(599, 451));
 
         jLabel1.setText("Name:");
 
@@ -147,15 +149,18 @@ public class CreateEventPage extends javax.swing.JFrame {
         updateUserEvents(userUsername);
         dispose();
         System.out.println(eventss.toString());
-        HomePage hp1 = new HomePage();
-        hp1.setVisible(true);
+        HomePage hp9 = new HomePage();
+        hp9.setLocationRelativeTo(this);
+        hp9.setVisible(true);
     }//GEN-LAST:event_createButtonActionPerformed
 
     private void cancelCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelCreateActionPerformed
         //setVisible(false);
-        dispose();
+        
         HomePage hp1 = new HomePage();
+        hp1.setLocationRelativeTo(this);
         hp1.setVisible(true);
+        dispose();
         
     }//GEN-LAST:event_cancelCreateActionPerformed
 

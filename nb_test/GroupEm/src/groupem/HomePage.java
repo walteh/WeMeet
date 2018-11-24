@@ -74,7 +74,8 @@ public class HomePage extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(500, 500));
+        setLocation(new java.awt.Point(682, 318));
+        setPreferredSize(new java.awt.Dimension(599, 451));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentMoved(java.awt.event.ComponentEvent evt) {
                 formComponentMoved(evt);
@@ -154,12 +155,15 @@ public class HomePage extends javax.swing.JFrame {
         Event ev = getEvent(s);
         System.out.println(ev);
         EventPage e = new EventPage(ev);
+        e.setSize(this.getSize());
+        e.setLocationRelativeTo(this);
         e.setVisible(true);
         
     }//GEN-LAST:event_jList1ValueChanged
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         CreateEventPage c = new CreateEventPage();
+        c.setLocationRelativeTo(this);
         c.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -171,6 +175,7 @@ public class HomePage extends javax.swing.JFrame {
         userUsername = null;
         loggedIn = false;
         Login l = new Login(this, true);
+        l.setLocationRelativeTo(this);
         l.addWindowListener(new WindowAdapter() {
             public void windowClosed(WindowEvent e) {
                 System.exit(0);

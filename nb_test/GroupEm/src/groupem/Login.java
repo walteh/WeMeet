@@ -67,6 +67,12 @@ public class Login extends javax.swing.JDialog {
         close = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocation(new java.awt.Point(765, 360));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                formComponentMoved(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(0, 191, 255));
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 48)); // NOI18N
@@ -224,10 +230,11 @@ public class Login extends javax.swing.JDialog {
         updateUserEvents(userUsername);
         System.out.println("userEventNames after: " + Arrays.toString(userEventNames));
         //System.out.println("userEvent after: " + userEvents.toString());
-        setVisible(false);
+        
         HomePage hp4 = new HomePage();
         hp4.setVisible(loggedIn);
-        
+        hp4.setLocationRelativeTo(this);
+        setVisible(false);
         //hp.setVisible(loggedIn);
         
         
@@ -291,6 +298,10 @@ public class Login extends javax.swing.JDialog {
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
         System.exit(0);
     }//GEN-LAST:event_closeActionPerformed
+
+    private void formComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentMoved
+        System.out.println("LOGIN ---  X: " + getX() + "   Y: " + getY() + "    height: " + this.getSize().height +  "  width: " + this.getSize().width);
+    }//GEN-LAST:event_formComponentMoved
 
     /**
      * @param args the command line arguments

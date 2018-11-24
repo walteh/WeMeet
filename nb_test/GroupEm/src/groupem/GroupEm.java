@@ -77,6 +77,7 @@ public class GroupEm {
         
         
         Login log = new Login(hp,true);
+        log.setLocation(797, 426);
         log.addWindowListener(new WindowAdapter() {
             public void windowClosed(WindowEvent e) {
                 System.exit(0);
