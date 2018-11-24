@@ -27,15 +27,24 @@ public class GroupEm {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        Login log = new Login(hp,true);
-        log.signupButtonActionPerformed(new java.awt.event.ActionEvent { 
         
-        };
+        usernames.add("walter");
+        usernames.add("ian");
+        usernames.add("leigh");
+        passwords.add("s");
+        passwords.add("a");
+        passwords.add("w");
+        
+        Login log = new Login(hp,true);
         log.setVisible(true);
         
-        while (!loggedIn){
-            
-        }
+        
+        
+        
+        
+        
+        
+        
         
         
         

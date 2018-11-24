@@ -5,6 +5,12 @@
  */
 package groupem;
 
+import static groupem.GroupEm.hp;
+import static groupem.GroupEm.passwords;
+import static groupem.GroupEm.userPass;
+import static groupem.GroupEm.userUsername;
+import static groupem.GroupEm.usernames;
+import static groupem.GroupEm.loggedIn;
 import java.util.ArrayList;
 
 /**
@@ -15,10 +21,10 @@ import java.util.ArrayList;
 
 public class Login extends javax.swing.JDialog {
 
-    ArrayList<String> usernames = new ArrayList<>();
-    ArrayList<String> passwords = new ArrayList<>();
-    String userPass;
-    String userUsername;
+//    ArrayList<String> usernames = new ArrayList<>();
+//    ArrayList<String> passwords = new ArrayList<>();
+//    String userPass;
+//    String userUsername;
     java.awt.Frame p;
     
     /**
@@ -27,7 +33,7 @@ public class Login extends javax.swing.JDialog {
     public Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         p = parent;
-        this.passwords = new ArrayList();
+        //this.passwords = new ArrayList();
         initComponents();
     }
 
@@ -182,6 +188,9 @@ public class Login extends javax.swing.JDialog {
         }
         
         System.out.println("Username and Password Verified");
+        setVisible(false);
+        loggedIn = true;
+        hp.setVisible(loggedIn);
         
         
     }//GEN-LAST:event_signinButtonActionPerformed
@@ -205,7 +214,9 @@ public class Login extends javax.swing.JDialog {
 //        String[] test = new String[0];
 //        Home.main(test);
         setVisible(false);
-        HomePage s = new HomePage();
+        //HomePage s = new HomePage();
+        loggedIn = true;
+        hp.setVisible(loggedIn);
         
         
     }//GEN-LAST:event_signupButtonActionPerformed
