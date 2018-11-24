@@ -7,6 +7,7 @@ package groupem;
 
 import static groupem.GroupEm.eventss;
 import static groupem.GroupEm.hp;
+import static groupem.GroupEm.updateUserEvents;
 import static groupem.GroupEm.userUsername;
 
 /**
@@ -141,6 +142,7 @@ public class CreateEventPage extends javax.swing.JFrame {
         Event e = new Event(nameText.getText(), userUsername, descText.getText(), dateText.getText());
         e.addInvitee(userUsername);
         eventss.add(e);
+        updateUserEvents(userUsername);
         dispose();
         System.out.println(eventss.toString());
         hp = new HomePage();
