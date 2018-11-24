@@ -25,7 +25,7 @@ public class GroupEm {
     public static ArrayList<String> passwords = new ArrayList<>();
     public static ArrayList<Event> eventss = new ArrayList<>();
     public static ArrayList<Event> userEvents = new ArrayList<>();
-    public static String[] userEventNames = new String[]{"yo","Yo"};
+    public static String[] userEventNames = new String[0];
     public static String userPass;
     public static String userUsername;
     public static boolean loggedIn = false;
@@ -118,6 +118,13 @@ public class GroupEm {
              
         }
         userEventNames = temp;
+    }
+    
+    public static int getUserIndex(String user){
+        for (int i = 0; i < usernames.size(); i++){
+            if (usernames.get(i).equals(user)) return i;
+        }
+        return -1;
     }
     
 }

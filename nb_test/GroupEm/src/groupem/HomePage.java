@@ -8,11 +8,14 @@ package groupem;
 import static groupem.GroupEm.eventss;
 import static groupem.GroupEm.getEvent;
 import static groupem.GroupEm.hp;
+import static groupem.GroupEm.loggedIn;
 import static groupem.GroupEm.pan;
 import static groupem.GroupEm.userEvents;
 import static groupem.GroupEm.userEventNames;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -158,8 +161,15 @@ public class HomePage extends javax.swing.JFrame {
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         dispose();
+        loggedIn = false;
         Login l = new Login(this, true);
+        l.addWindowListener(new WindowAdapter() {
+            public void windowClosed(WindowEvent e) {
+                System.exit(0);
+            }
+        });
         l.setVisible(true);
+        
         
     }//GEN-LAST:event_logoutActionPerformed
 

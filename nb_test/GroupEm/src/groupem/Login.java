@@ -13,8 +13,13 @@ import static groupem.GroupEm.userUsername;
 import static groupem.GroupEm.usernames;
 import static groupem.GroupEm.loggedIn;
 import static groupem.GroupEm.eventss;
+import static groupem.GroupEm.getUserIndex;
 import static groupem.GroupEm.updateUserEvents;
+import static groupem.GroupEm.userEventNames;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -154,6 +159,9 @@ public class Login extends javax.swing.JDialog {
         // TODO add your handling code here:
         userUsername = usernameText.getText();
         userPass = passwordText.getText();
+        //userPass = passwordText.getPassword();
+        //userPass = passwordText.getp
+        
         
         boolean isUser = usernames.contains(userUsername);
         if (userUsername.equalsIgnoreCase("") && userPass.equalsIgnoreCase(""))
@@ -165,7 +173,8 @@ public class Login extends javax.swing.JDialog {
         else if(!isUser)
             invalid_text.setText("Incorrect Username or Password");
       
-        int userIndex = usernames.indexOf(userUsername);
+        int userIndex = getUserIndex(userUsername);
+        System.out.println("INDEX: "+ userIndex);
         boolean correctPassword = passwords.get(userIndex).equals(userPass);
         if(userPass.contentEquals("")){
             invalid_text.setText("Hello, " + userUsername + ". Please enter your password");
@@ -177,11 +186,11 @@ public class Login extends javax.swing.JDialog {
         }
         
         System.out.println("Username and Password Verified");
-        setVisible(false);
         loggedIn = true;
         updateUserEvents(userUsername);
-        hp = new HomePage();
-        hp.setVisible(loggedIn);
+        setVisible(false);
+        HomePage hp4 = new HomePage();
+        hp4.setVisible(loggedIn);
         
         //hp.setVisible(loggedIn);
         
@@ -211,11 +220,14 @@ public class Login extends javax.swing.JDialog {
             usernames.add(userUsername);
             passwords.add(userPass);
             
-            setVisible(false);
+            
             updateUserEvents(userUsername);
+            System.out.println("username: " + userUsername);
+            System.out.println("yo: " + Arrays.toString(userEventNames));
             loggedIn = true;
-            hp = new HomePage();
-            hp.setVisible(loggedIn);
+            setVisible(false);
+            HomePage hp3 = new HomePage();
+            hp3.setVisible(loggedIn);
             //hp.setVisible(loggedIn);
         }
         System.out.println("usernames: " + usernames.toString());

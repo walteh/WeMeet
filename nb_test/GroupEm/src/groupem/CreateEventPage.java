@@ -9,6 +9,8 @@ import static groupem.GroupEm.eventss;
 import static groupem.GroupEm.hp;
 import static groupem.GroupEm.updateUserEvents;
 import static groupem.GroupEm.userUsername;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  *
@@ -145,15 +147,15 @@ public class CreateEventPage extends javax.swing.JFrame {
         updateUserEvents(userUsername);
         dispose();
         System.out.println(eventss.toString());
-        hp = new HomePage();
-        hp.setVisible(true);
+        HomePage hp1 = new HomePage();
+        hp1.setVisible(true);
     }//GEN-LAST:event_createButtonActionPerformed
 
     private void cancelCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelCreateActionPerformed
         //setVisible(false);
         dispose();
-        hp = new HomePage();
-        hp.setVisible(true);
+        HomePage hp1 = new HomePage();
+        hp1.setVisible(true);
         
     }//GEN-LAST:event_cancelCreateActionPerformed
 
