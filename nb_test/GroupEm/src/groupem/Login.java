@@ -6,11 +6,14 @@
 package groupem;
 
 import static groupem.GroupEm.hp;
+import static groupem.GroupEm.pan;
 import static groupem.GroupEm.passwords;
 import static groupem.GroupEm.userPass;
 import static groupem.GroupEm.userUsername;
 import static groupem.GroupEm.usernames;
 import static groupem.GroupEm.loggedIn;
+import static groupem.GroupEm.eventss;
+import static groupem.GroupEm.updateUserEvents;
 import java.util.ArrayList;
 
 /**
@@ -190,7 +193,12 @@ public class Login extends javax.swing.JDialog {
         System.out.println("Username and Password Verified");
         setVisible(false);
         loggedIn = true;
+        updateUserEvents(userUsername);
+        hp = new HomePage();
         hp.setVisible(loggedIn);
+        
+        //hp.setVisible(loggedIn);
+        
         
         
     }//GEN-LAST:event_signinButtonActionPerformed
@@ -202,21 +210,34 @@ public class Login extends javax.swing.JDialog {
         userPass = passwordText.getText();
         
         boolean isUser = usernames.contains(userUsername);
-        if(isUser) {
-            invalid_text.setText("username already exists");
+        if (userUsername.equalsIgnoreCase("") && userPass.equalsIgnoreCase("")){
+            invalid_text.setText("You must enter a username and password");
+        }
+        else if(userUsername.equalsIgnoreCase("")){
+            invalid_text.setText("You must enter a username");
+        }
+        else if(userPass.equalsIgnoreCase("")){
+            invalid_text.setText("You must enter a password");
+        }
+        else if(isUser) {
+            invalid_text.setText("Username already exists");
         } else {
             usernames.add(userUsername);
             passwords.add(userPass);
+            
+            setVisible(false);
+            updateUserEvents(userUsername);
+            loggedIn = true;
+            hp = new HomePage();
+            hp.setVisible(loggedIn);
+            //hp.setVisible(loggedIn);
         }
         System.out.println("usernames: " + usernames.toString());
         System.out.println("passwords: " + passwords.toString());
         
 //        String[] test = new String[0];
 //        Home.main(test);
-        setVisible(false);
-        //HomePage s = new HomePage();
-        loggedIn = true;
-        hp.setVisible(loggedIn);
+        
         
         
     }//GEN-LAST:event_signupButtonActionPerformed

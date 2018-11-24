@@ -5,12 +5,18 @@
  */
 package groupem;
 
+import static groupem.GroupEm.eventss;
+import static groupem.GroupEm.pan;
+import static groupem.GroupEm.userEvents;
+import static groupem.GroupEm.userEventNames;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.ListModel;
 import javax.swing.event.ListDataListener;
 
@@ -20,7 +26,7 @@ import javax.swing.event.ListDataListener;
  */
 public class HomePage extends javax.swing.JFrame {
     
-    public static ArrayList<Event> events = new ArrayList<>();
+    //public static ArrayList<Event> events = new ArrayList<>();
     
     
 
@@ -30,7 +36,6 @@ public class HomePage extends javax.swing.JFrame {
     public HomePage() {
         initComponents();
         int userEventAmount = 0;
-        
     }
 
     /**
@@ -48,7 +53,7 @@ public class HomePage extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jScrollPane1 = new javax.swing.JScrollPane();
-        eventList = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList<>();
 
         jMenu1.setText("jMenu1");
 
@@ -63,32 +68,34 @@ public class HomePage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        eventList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            //String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = userEventNames;
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(eventList);
+        jScrollPane1.setViewportView(jList1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(209, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(163, 163, 163))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addGap(71, 71, 71)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
 
     /**
      * @param args the command line arguments
@@ -117,13 +124,6 @@ public class HomePage extends javax.swing.JFrame {
         }
         //</editor-fold>
         
-        ArrayList<String> in = new ArrayList<>();
-        in.add("walter");
-        in.add("ian");
-        
-        Event one = new Event("1", "1", "1", "1", in);
-        Event two = new Event("1", "1", "1", "1", in);
-        Event three = new Event("1", "1", "1", "1", in);
         
 
         /* Create and display the form */
@@ -132,32 +132,34 @@ public class HomePage extends javax.swing.JFrame {
                 new HomePage().setVisible(true);
             }
         });
+        
+        
     }
     
     public static void updateEvents(){
-        for (Event e : events) {
-            JButton event = new JButton(e.name);
-            event.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //try{
-                    
-//                } catch (IOException ex) {
+//        for (Event e : events) {
+//            JButton event = new JButton(e.name);
+//            event.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                //try{
 //                    
-//                }
-                
-                // The BasicContainer bc2 must request the focus
-                // otherwise, it can't get keyboard events.
-                
-            }
-        });
-        event.setVisible(true);
-        }
+////                } catch (IOException ex) {
+////                    
+////                }
+//                
+//                // The BasicContainer bc2 must request the focus
+//                // otherwise, it can't get keyboard events.
+//                
+//            }
+//        });
+//        event.setVisible(true);
+//        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> eventList;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
