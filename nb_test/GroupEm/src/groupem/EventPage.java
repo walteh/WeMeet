@@ -70,34 +70,34 @@ public class EventPage extends javax.swing.JFrame{
         eventTitle.setForeground(new java.awt.Color(112, 137, 182));
         eventTitle.setText("jLabel1");
         getContentPane().add(eventTitle);
-        eventTitle.setBounds(30, 40, 300, 17);
+        eventTitle.setBounds(30, 40, 300, 40);
 
-        eventDescriptionLabel.setFont(new java.awt.Font("Effra", 1, 13)); // NOI18N
+        eventDescriptionLabel.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         eventDescriptionLabel.setText("Description: ");
         getContentPane().add(eventDescriptionLabel);
-        eventDescriptionLabel.setBounds(29, 74, 71, 17);
+        eventDescriptionLabel.setBounds(30, 80, 81, 16);
 
-        eventDescriptionText.setFont(new java.awt.Font("Helvetica Neue", 0, 13)); // NOI18N
+        eventDescriptionText.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         eventDescriptionText.setText("jLabel1");
         getContentPane().add(eventDescriptionText);
-        eventDescriptionText.setBounds(118, 74, 330, 17);
+        eventDescriptionText.setBounds(130, 80, 310, 17);
 
         eventDateLabel.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         eventDateLabel.setText("Date:");
         getContentPane().add(eventDateLabel);
-        eventDateLabel.setBounds(29, 97, 32, 17);
+        eventDateLabel.setBounds(30, 100, 33, 16);
 
-        eventDateText.setFont(new java.awt.Font("Helvetica Neue", 0, 13)); // NOI18N
+        eventDateText.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         eventDateText.setText("jLabel1");
         getContentPane().add(eventDateText);
-        eventDateText.setBounds(128, 97, 300, 17);
+        eventDateText.setBounds(130, 100, 300, 17);
 
         eventDateLabel1.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         eventDateLabel1.setText("Creator:");
         getContentPane().add(eventDateLabel1);
-        eventDateLabel1.setBounds(29, 120, 95, 17);
+        eventDateLabel1.setBounds(29, 120, 95, 16);
 
-        eventCreatorText.setFont(new java.awt.Font("Helvetica Neue", 0, 13)); // NOI18N
+        eventCreatorText.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         eventCreatorText.setText("jLabel1");
         getContentPane().add(eventCreatorText);
         eventCreatorText.setBounds(130, 120, 300, 17);
@@ -105,20 +105,20 @@ public class EventPage extends javax.swing.JFrame{
         eventDateLabel2.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         eventDateLabel2.setText("Invitees:");
         getContentPane().add(eventDateLabel2);
-        eventDateLabel2.setBounds(29, 151, 95, 17);
+        eventDateLabel2.setBounds(30, 140, 95, 16);
         getContentPane().add(eventDateText2);
         eventDateText2.setBounds(216, 143, 0, 0);
 
-        eventInviteesText.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
+        eventInviteesText.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         eventInviteesText.setText("jLabel1");
         getContentPane().add(eventInviteesText);
-        eventInviteesText.setBounds(29, 181, 305, 19);
+        eventInviteesText.setBounds(130, 140, 305, 19);
 
         eventDateLabel3.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         eventDateLabel3.setText("Comments:");
         eventDateLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(eventDateLabel3);
-        eventDateLabel3.setBounds(29, 211, 95, 17);
+        eventDateLabel3.setBounds(30, 160, 95, 16);
 
         back_from_event.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         back_from_event.setText("back");
@@ -138,7 +138,7 @@ public class EventPage extends javax.swing.JFrame{
             }
         });
         getContentPane().add(add_comment);
-        add_comment.setBounds(130, 206, 98, 29);
+        add_comment.setBounds(10, 400, 100, 20);
 
         add_invite.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         add_invite.setText("invite");
@@ -148,7 +148,7 @@ public class EventPage extends javax.swing.JFrame{
             }
         });
         getContentPane().add(add_invite);
-        add_invite.setBounds(130, 146, 76, 29);
+        add_invite.setBounds(40, 430, 70, 20);
 
         inviteText.setFont(new java.awt.Font("Helvetica Neue", 0, 13)); // NOI18N
         inviteText.setBorder(null);
@@ -159,17 +159,16 @@ public class EventPage extends javax.swing.JFrame{
             }
         });
         getContentPane().add(inviteText);
-        inviteText.setBounds(212, 146, 222, 29);
+        inviteText.setBounds(120, 430, 320, 20);
 
         commentText.setFont(new java.awt.Font("Helvetica Neue", 0, 13)); // NOI18N
         commentText.setBorder(null);
         commentText.setPreferredSize(new java.awt.Dimension(200, 25));
-        commentText.setSize(new java.awt.Dimension(200, 25));
         getContentPane().add(commentText);
-        commentText.setBounds(234, 207, 200, 25);
+        commentText.setBounds(120, 400, 320, 20);
 
         eventCommentsText.setEditable(false);
-        eventCommentsText.setBackground(new java.awt.Color(232, 232, 232));
+        eventCommentsText.setBackground(new java.awt.Color(252, 252, 252));
         eventCommentsText.setColumns(20);
         eventCommentsText.setFont(new java.awt.Font("Helvetica Neue", 0, 13)); // NOI18N
         eventCommentsText.setRows(5);
@@ -178,7 +177,7 @@ public class EventPage extends javax.swing.JFrame{
         jScrollPane1.setViewportView(eventCommentsText);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(29, 241, 405, 225);
+        jScrollPane1.setBounds(29, 186, 405, 200);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/EventPage.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -197,7 +196,7 @@ public class EventPage extends javax.swing.JFrame{
             eventCommentsText.setText(event.commentToString());
             System.out.println(event.commentToString());
             commentText.setText("");
-            commentText.setSize(200, 25);
+            commentText.setSize(320, 20);
         }
     }//GEN-LAST:event_add_commentActionPerformed
 
@@ -207,7 +206,7 @@ public class EventPage extends javax.swing.JFrame{
             eventInviteesText.setText(event.inviteeToString());
             System.out.println(event.inviteeToString());
             inviteText.setText("");
-            inviteText.setSize(200, 25);
+            inviteText.setSize(320, 20);
         }
     }//GEN-LAST:event_add_inviteActionPerformed
 

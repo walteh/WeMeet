@@ -77,11 +77,12 @@ public class Login extends javax.swing.JDialog {
         getContentPane().setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(0, 191, 255));
-        jLabel1.setFont(new java.awt.Font("Effra", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Effra", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(112, 137, 182));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("GroupEm");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 110, 204, 58);
+        jLabel1.setBounds(10, 130, 310, 43);
 
         usernameText.setFont(new java.awt.Font("Helvetica Neue", 0, 13)); // NOI18N
         usernameText.setBorder(null);
@@ -96,17 +97,17 @@ public class Login extends javax.swing.JDialog {
             }
         });
         getContentPane().add(usernameText);
-        usernameText.setBounds(130, 170, 128, 17);
+        usernameText.setBounds(130, 190, 150, 17);
 
         jLabel2.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         jLabel2.setText("username");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 170, 57, 17);
+        jLabel2.setBounds(40, 190, 80, 16);
 
         jLabel3.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         jLabel3.setText("password");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 200, 55, 17);
+        jLabel3.setBounds(40, 220, 80, 16);
 
         signinButton.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         signinButton.setText("sign in");
@@ -116,7 +117,7 @@ public class Login extends javax.swing.JDialog {
             }
         });
         getContentPane().add(signinButton);
-        signinButton.setBounds(170, 240, 79, 29);
+        signinButton.setBounds(170, 260, 87, 29);
 
         signupButton.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         signupButton.setText("sign up");
@@ -126,19 +127,19 @@ public class Login extends javax.swing.JDialog {
             }
         });
         getContentPane().add(signupButton);
-        signupButton.setBounds(60, 240, 83, 29);
+        signupButton.setBounds(60, 260, 91, 29);
 
         invalid_text.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
         invalid_text.setForeground(new java.awt.Color(225, 0, 0));
         invalid_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         invalid_text.setText("             ");
         getContentPane().add(invalid_text);
-        invalid_text.setBounds(32, 220, 260, 14);
+        invalid_text.setBounds(30, 240, 260, 20);
 
         passwordText.setFont(new java.awt.Font("Helvetica Neue", 0, 13)); // NOI18N
         passwordText.setBorder(null);
         getContentPane().add(passwordText);
-        passwordText.setBounds(130, 200, 128, 17);
+        passwordText.setBounds(130, 220, 150, 17);
 
         close.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         close.setText("close");
@@ -148,7 +149,7 @@ public class Login extends javax.swing.JDialog {
             }
         });
         getContentPane().add(close);
-        close.setBounds(120, 290, 75, 29);
+        close.setBounds(120, 290, 77, 29);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/GroupEm Login.jpg"))); // NOI18N
         getContentPane().add(jLabel4);

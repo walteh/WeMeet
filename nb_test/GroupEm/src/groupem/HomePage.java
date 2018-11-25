@@ -40,6 +40,7 @@ public class HomePage extends javax.swing.JFrame {
     public HomePage() {
         initComponents();
         int userEventAmount = 0;
+        your_events_label.setText(userUsername + "'s Events");
     }
 
     /**
@@ -60,7 +61,7 @@ public class HomePage extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         logout = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        your_events_label = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
@@ -101,17 +102,17 @@ public class HomePage extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(81, 132, 260, 180);
+        jScrollPane1.setBounds(50, 100, 360, 260);
 
         logout.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
-        logout.setText("log out");
+        logout.setText("  log out  ");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
             }
         });
         getContentPane().add(logout);
-        logout.setBounds(26, 363, 82, 29);
+        logout.setBounds(20, 400, 110, 30);
 
         jButton2.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         jButton2.setText("create event");
@@ -121,13 +122,19 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(332, 363, 116, 29);
+        jButton2.setBounds(320, 400, 120, 29);
 
-        jLabel1.setFont(new java.awt.Font("Effra", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(112, 137, 182));
-        jLabel1.setText("Your Events: ");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(81, 82, 213, 44);
+        your_events_label.setFont(new java.awt.Font("Effra", 0, 36)); // NOI18N
+        your_events_label.setForeground(new java.awt.Color(112, 137, 182));
+        your_events_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        your_events_label.setText("Your Events: ");
+        your_events_label.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                your_events_labelComponentShown(evt);
+            }
+        });
+        getContentPane().add(your_events_label);
+        your_events_label.setBounds(10, 50, 430, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/HomePage.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -186,6 +193,9 @@ public class HomePage extends javax.swing.JFrame {
         //HOMEPAGE ---  X: 623   Y: 318    height: 451  width: 599
     }//GEN-LAST:event_formComponentMoved
 
+    private void your_events_labelComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_your_events_labelComponentShown
+        your_events_label.setText(userUsername + "'s Events");
+    }//GEN-LAST:event_your_events_labelComponentShown
 
     /**
      * @param args the command line arguments
@@ -250,7 +260,6 @@ public class HomePage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
@@ -259,5 +268,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton logout;
+    private javax.swing.JLabel your_events_label;
     // End of variables declaration//GEN-END:variables
 }

@@ -59,17 +59,17 @@ public class CreateEventPage extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         jLabel1.setText("Event Name: ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 150, 80, 16);
+        jLabel1.setBounds(70, 170, 90, 16);
 
         jLabel2.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
-        jLabel2.setText("Date:");
+        jLabel2.setText("Event Date:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 190, 33, 16);
+        jLabel2.setBounds(70, 210, 90, 16);
 
-        jLabel3.setFont(new java.awt.Font("Effra", 0, 24)); // NOI18N
-        jLabel3.setText("Description:");
+        jLabel3.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
+        jLabel3.setText("Event Description:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(160, 220, 150, 30);
+        jLabel3.setBounds(70, 240, 230, 20);
 
         nameText.setBorder(null);
         nameText.addActionListener(new java.awt.event.ActionListener() {
@@ -78,11 +78,11 @@ public class CreateEventPage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nameText);
-        nameText.setBounds(150, 151, 192, 16);
+        nameText.setBounds(170, 170, 220, 16);
 
         dateText.setBorder(null);
         getContentPane().add(dateText);
-        dateText.setBounds(150, 190, 190, 16);
+        dateText.setBounds(170, 210, 220, 16);
 
         descText.setColumns(20);
         descText.setRows(5);
@@ -90,13 +90,13 @@ public class CreateEventPage extends javax.swing.JFrame {
         jScrollPane1.setViewportView(descText);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(101, 249, 244, 84);
+        jScrollPane1.setBounds(70, 270, 320, 120);
 
         jLabel4.setFont(new java.awt.Font("Effra", 0, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(112, 137, 182));
         jLabel4.setText("Create New Event");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(76, 89, 304, 43);
+        jLabel4.setBounds(80, 100, 304, 43);
 
         createButton.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         createButton.setText("create");
@@ -106,7 +106,7 @@ public class CreateEventPage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(createButton);
-        createButton.setBounds(339, 345, 82, 29);
+        createButton.setBounds(340, 410, 82, 29);
 
         cancelCreate.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         cancelCreate.setText("cancel");
@@ -116,7 +116,7 @@ public class CreateEventPage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cancelCreate);
-        cancelCreate.setBounds(25, 345, 84, 29);
+        cancelCreate.setBounds(20, 410, 84, 29);
 
         big_G_create_page.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CreateEvent.jpg"))); // NOI18N
         big_G_create_page.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -147,6 +147,7 @@ public class CreateEventPage extends javax.swing.JFrame {
         hp9.setSize(451,487);
         hp9.setLocationRelativeTo(this);
         hp9.setVisible(true);
+        //hp9.pack();
     }//GEN-LAST:event_createButtonActionPerformed
 
     private void cancelCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelCreateActionPerformed
@@ -157,7 +158,7 @@ public class CreateEventPage extends javax.swing.JFrame {
         hp1.setSize(451,487);
         hp1.setLocationRelativeTo(this);
         hp1.setVisible(true);
-        
+        //hp1.pack();
         
     }//GEN-LAST:event_cancelCreateActionPerformed
 
