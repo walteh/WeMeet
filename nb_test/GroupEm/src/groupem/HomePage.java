@@ -61,6 +61,7 @@ public class HomePage extends javax.swing.JFrame {
         logout = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -81,14 +82,17 @@ public class HomePage extends javax.swing.JFrame {
                 formComponentMoved(evt);
             }
         });
+        getContentPane().setLayout(null);
 
-        jList1.setFont(new java.awt.Font("Helvetica", 0, 12)); // NOI18N
+        jList1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jList1.setFont(new java.awt.Font("Helvetica", 0, 18)); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             //String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             String[] strings = userEventNames;
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList1.setSize(new java.awt.Dimension(180, 252));
         jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 jList1ValueChanged(evt);
@@ -96,52 +100,38 @@ public class HomePage extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(81, 132, 260, 180);
+
+        logout.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         logout.setText("log out");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
             }
         });
+        getContentPane().add(logout);
+        logout.setBounds(26, 363, 82, 29);
 
+        jButton2.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         jButton2.setText("create event");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(332, 363, 116, 29);
 
-        jLabel1.setText("Events you have been invited to:");
+        jLabel1.setFont(new java.awt.Font("Effra", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(112, 137, 182));
+        jLabel1.setText("Your Events: ");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(81, 82, 213, 44);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(logout)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(15, 15, 15))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logout)
-                    .addComponent(jButton2))
-                .addGap(47, 47, 47)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(76, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/HomePage.jpg"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 460, 490);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,7 +145,8 @@ public class HomePage extends javax.swing.JFrame {
         Event ev = getEvent(s);
         System.out.println(ev);
         EventPage e = new EventPage(ev);
-        e.setSize(this.getSize());
+        e.setResizable(false);
+        e.setSize(451,487);
         e.setLocationRelativeTo(this);
         e.setVisible(true);
         
@@ -164,8 +155,10 @@ public class HomePage extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         CreateEventPage c = new CreateEventPage();
         c.setLocationRelativeTo(this);
+        c.setResizable(false);
+        c.setSize(451,487);
         c.setVisible(true);
-        setVisible(false);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
@@ -175,6 +168,8 @@ public class HomePage extends javax.swing.JFrame {
         userUsername = null;
         loggedIn = false;
         Login l = new Login(this, true);
+        l.setResizable(false);
+        l.setSize(326, 348);
         l.setLocationRelativeTo(this);
         l.addWindowListener(new WindowAdapter() {
             public void windowClosed(WindowEvent e) {
@@ -256,6 +251,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

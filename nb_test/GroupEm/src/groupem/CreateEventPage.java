@@ -44,95 +44,78 @@ public class CreateEventPage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         createButton = new javax.swing.JButton();
         cancelCreate = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(682, 318));
         setPreferredSize(new java.awt.Dimension(599, 451));
+        getContentPane().setLayout(null);
 
-        jLabel1.setText("Name:");
+        jLabel1.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
+        jLabel1.setText("Event Name: ");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(70, 150, 80, 17);
 
+        jLabel2.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         jLabel2.setText("Date:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(110, 190, 32, 17);
 
+        jLabel3.setFont(new java.awt.Font("Effra", 0, 24)); // NOI18N
         jLabel3.setText("Description:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(160, 220, 150, 30);
 
+        nameText.setBorder(null);
         nameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTextActionPerformed(evt);
             }
         });
+        getContentPane().add(nameText);
+        nameText.setBounds(150, 151, 192, 16);
+
+        dateText.setBorder(null);
+        getContentPane().add(dateText);
+        dateText.setBounds(150, 190, 190, 16);
 
         descText.setColumns(20);
         descText.setRows(5);
+        descText.setBorder(null);
         jScrollPane1.setViewportView(descText);
 
-        jLabel4.setText("Create New Event");
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(101, 249, 244, 84);
 
+        jLabel4.setFont(new java.awt.Font("Effra", 0, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(112, 137, 182));
+        jLabel4.setText("Create New Event");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(76, 89, 293, 44);
+
+        createButton.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         createButton.setText("create");
         createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(createButton);
+        createButton.setBounds(339, 345, 81, 29);
 
+        cancelCreate.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         cancelCreate.setText("cancel");
         cancelCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelCreateActionPerformed(evt);
             }
         });
+        getContentPane().add(cancelCreate);
+        cancelCreate.setBounds(25, 345, 80, 29);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cancelCreate)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(jLabel4)))
-                .addContainerGap(99, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(createButton)
-                .addGap(91, 91, 91))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(createButton)
-                    .addComponent(cancelCreate))
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CreateEvent.jpg"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 450, 490);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -150,6 +133,8 @@ public class CreateEventPage extends javax.swing.JFrame {
         dispose();
         System.out.println(eventss.toString());
         HomePage hp9 = new HomePage();
+        hp9.setResizable(false);
+        hp9.setSize(451,487);
         hp9.setLocationRelativeTo(this);
         hp9.setVisible(true);
     }//GEN-LAST:event_createButtonActionPerformed
@@ -159,6 +144,8 @@ public class CreateEventPage extends javax.swing.JFrame {
         
         HomePage hp1 = new HomePage();
         hp1.setLocationRelativeTo(this);
+        hp1.setResizable(false);
+        hp1.setSize(451,487);
         hp1.setVisible(true);
         dispose();
         
@@ -208,6 +195,7 @@ public class CreateEventPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameText;
     // End of variables declaration//GEN-END:variables

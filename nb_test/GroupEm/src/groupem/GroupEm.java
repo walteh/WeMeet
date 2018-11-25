@@ -79,10 +79,13 @@ public class GroupEm {
         
         
         Login log = new Login(hp,true);
+        log.setResizable(false);
+        log.setSize(326, 348);
         log.setLocation(797, 426);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         log.setLocation(dim.width/2-log.getSize().width/2, dim.height/2-log.getSize().height/2);
         log.addWindowListener(new WindowAdapter() {
+            @Override
             public void windowClosed(WindowEvent e) {
                 System.exit(0);
             }
