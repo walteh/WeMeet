@@ -151,13 +151,13 @@ public class CreateEventPage extends javax.swing.JFrame {
 
     private void cancelCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelCreateActionPerformed
         //setVisible(false);
-        
+        dispose();
         HomePage hp1 = new HomePage();
-        hp1.setLocationRelativeTo(this);
         hp1.setResizable(false);
         hp1.setSize(451,487);
+        hp1.setLocationRelativeTo(this);
         hp1.setVisible(true);
-        dispose();
+        
         
     }//GEN-LAST:event_cancelCreateActionPerformed
 
