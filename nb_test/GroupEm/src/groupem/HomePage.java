@@ -154,9 +154,9 @@ public class HomePage extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         CreateEventPage c = new CreateEventPage();
+        c.setSize(451,487);
         c.setLocationRelativeTo(this);
         c.setResizable(false);
-        c.setSize(451,487);
         c.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed

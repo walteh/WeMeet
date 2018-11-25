@@ -44,22 +44,27 @@ public class CreateEventPage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         createButton = new javax.swing.JButton();
         cancelCreate = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        big_G_create_page = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(682, 318));
         setPreferredSize(new java.awt.Dimension(599, 451));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                formComponentMoved(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         jLabel1.setText("Event Name: ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 150, 80, 17);
+        jLabel1.setBounds(70, 150, 80, 16);
 
         jLabel2.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         jLabel2.setText("Date:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 190, 32, 17);
+        jLabel2.setBounds(110, 190, 33, 16);
 
         jLabel3.setFont(new java.awt.Font("Effra", 0, 24)); // NOI18N
         jLabel3.setText("Description:");
@@ -91,7 +96,7 @@ public class CreateEventPage extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(112, 137, 182));
         jLabel4.setText("Create New Event");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(76, 89, 293, 44);
+        jLabel4.setBounds(76, 89, 304, 43);
 
         createButton.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         createButton.setText("create");
@@ -101,7 +106,7 @@ public class CreateEventPage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(createButton);
-        createButton.setBounds(339, 345, 81, 29);
+        createButton.setBounds(339, 345, 82, 29);
 
         cancelCreate.setFont(new java.awt.Font("Effra", 0, 13)); // NOI18N
         cancelCreate.setText("cancel");
@@ -111,11 +116,16 @@ public class CreateEventPage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cancelCreate);
-        cancelCreate.setBounds(25, 345, 80, 29);
+        cancelCreate.setBounds(25, 345, 84, 29);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CreateEvent.jpg"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 450, 490);
+        big_G_create_page.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CreateEvent.jpg"))); // NOI18N
+        big_G_create_page.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                big_G_create_pageComponentMoved(evt);
+            }
+        });
+        getContentPane().add(big_G_create_page);
+        big_G_create_page.setBounds(0, 0, 450, 490);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -150,6 +160,14 @@ public class CreateEventPage extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_cancelCreateActionPerformed
+
+    private void big_G_create_pageComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_big_G_create_pageComponentMoved
+        System.out.println("CREATE PAGE ---  X: " + getX() + "   Y: " + getY() + "    height: " + this.getSize().height +  "  width: " + this.getSize().width);
+    }//GEN-LAST:event_big_G_create_pageComponentMoved
+
+    private void formComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentMoved
+        System.out.println("CREATE PAGE ---  X: " + getX() + "   Y: " + getY() + "    height: " + this.getSize().height +  "  width: " + this.getSize().width);
+    }//GEN-LAST:event_formComponentMoved
 
     /**
      * @param args the command line arguments
@@ -187,6 +205,7 @@ public class CreateEventPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel big_G_create_page;
     private javax.swing.JButton cancelCreate;
     private javax.swing.JButton createButton;
     private javax.swing.JTextField dateText;
@@ -195,7 +214,6 @@ public class CreateEventPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameText;
     // End of variables declaration//GEN-END:variables
