@@ -61,6 +61,7 @@ public class GroupEm {
         two.addInvitee("walter");
         two.addInvitee("ian");
         two.addInvitee("leigh");
+        two.addInvitee("scott");
         two.addComment("what?", "walter");
         two.addComment("I'm down.", "leigh");
         two.addComment("We have to win.","ian");

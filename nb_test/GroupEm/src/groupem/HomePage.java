@@ -134,7 +134,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(your_events_label);
-        your_events_label.setBounds(10, 50, 430, 30);
+        your_events_label.setBounds(10, 20, 430, 70);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/HomePage.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
