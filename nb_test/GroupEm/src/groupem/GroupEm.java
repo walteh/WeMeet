@@ -37,9 +37,9 @@ public class GroupEm {
         usernames.add("walter");
         usernames.add("ian");
         usernames.add("leigh");
-        passwords.add("s");
-        passwords.add("a");
-        passwords.add("w");
+        passwords.add("walterwalter");
+        passwords.add("ianianian");
+        passwords.add("leighleigh");
         
         
         Event one = new Event("Carnival", "walter", "State Fair trip 2k18", "11/30/18");
@@ -57,7 +57,7 @@ public class GroupEm {
         two.addInvitee("walter");
         two.addInvitee("ian");
         two.addInvitee("leigh");
-        two.addInvitee("scott");
+        //two.addInvitee("scott");
         two.addComment("what?", "walter");
         two.addComment("I'm down.", "leigh");
         two.addComment("We have to win.","ian");
