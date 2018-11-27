@@ -20,7 +20,7 @@ import java.util.Arrays;
 /**
  * Login Page for GroupEm
  * CSC 3380 Project
- * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Walker
+ * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Wilder
  * @since 11/27/18
  * @see GroupEm, Event, HomePage, EventPage, CreatePage
  */
@@ -28,10 +28,6 @@ import java.util.Arrays;
 
 public class Login extends javax.swing.JDialog {
 
-//    ArrayList<String> usernames = new ArrayList<>();
-//    ArrayList<String> passwords = new ArrayList<>();
-//    String userPass;
-//    String userUsername;
     java.awt.Frame p;
     
     /**

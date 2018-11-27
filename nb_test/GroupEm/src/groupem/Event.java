@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Event Class for GroupEm
  * CSC 3380 Project
- * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Walker
+ * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Wilder
  * @since 11/27/18
  * @see GroupEm, Login, HomePage, EventPage, CreatePage
  */

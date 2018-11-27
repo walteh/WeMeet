@@ -13,7 +13,7 @@ import static groupem.GroupEm.userUsername;
 /**
  * Create Event Page for GroupEm
  * CSC 3380 Project
- * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Walker
+ * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Wilder
  * @since 11/27/18
  * @see GroupEm, Login, Event, HomePage, EventPage
  */
