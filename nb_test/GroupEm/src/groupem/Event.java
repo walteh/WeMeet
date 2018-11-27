@@ -8,9 +8,13 @@ package groupem;
 import java.util.ArrayList;
 
 /**
- *
- * @author walter
+ * Event Class for GroupEm
+ * CSC 3380 Project
+ * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Walker
+ * @since 11/27/18
+ * @see GroupEm, Login, HomePage, EventPage, CreatePage
  */
+
 public class Event {
     String name;
     String date;
@@ -35,7 +39,7 @@ public class Event {
     
     public String commentToString(){
         String output = "";
-        for(int i = comments.size() - 1; i >= 0; i--){
+        for(int i = 0; i < comments.size(); i++){
             output += String.format("%s%n", comments.get(i));
         }
         return output;

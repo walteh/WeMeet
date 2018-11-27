@@ -5,27 +5,24 @@
  */
 package groupem;
 
-import static groupem.GroupEm.hp;
-import static groupem.GroupEm.pan;
 import static groupem.GroupEm.passwords;
 import static groupem.GroupEm.userPass;
 import static groupem.GroupEm.userUsername;
 import static groupem.GroupEm.usernames;
 import static groupem.GroupEm.loggedIn;
-import static groupem.GroupEm.eventss;
 import static groupem.GroupEm.getUserIndex;
 import static groupem.GroupEm.updateUserEvents;
 import static groupem.GroupEm.userEventNames;
 import static java.awt.Color.green;
 import static java.awt.Color.red;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- *
- * @author walter
+ * Login Page for GroupEm
+ * CSC 3380 Project
+ * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Walker
+ * @since 11/27/18
+ * @see GroupEm, Event, HomePage, EventPage, CreatePage
  */
 
 
@@ -256,24 +253,10 @@ public class Login extends javax.swing.JDialog {
             invalid_text.setForeground(green.darker());
             invalid_text.setText("You may now sign in.");
             
-//            
-//            
-//            updateUserEvents(userUsername);
-//            System.out.println("username: " + userUsername);
-//            System.out.println("yo: " + Arrays.toString(userEventNames));
-//            loggedIn = true;
-//            setVisible(false);
-//            HomePage hp3 = new HomePage();
-//            hp3.setVisible(loggedIn);
-//            //hp.setVisible(loggedIn);
         }
         System.out.println("usernames: " + usernames.toString());
         System.out.println("passwords: " + passwords.toString());
-        
-//        String[] test = new String[0];
-//        Home.main(test);
-        
-        
+
         
     }//GEN-LAST:event_signupButtonActionPerformed
 

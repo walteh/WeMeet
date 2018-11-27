@@ -5,28 +5,26 @@
  */
 package groupem;
 
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 /**
- *
- * @author walter
+ * GroupEm
+ * CSC 3380 Project
+ * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Walker
+ * @since 11/27/18
+ * @see Login, Event, HomePage, EventPage, CreatePage
  */
 public class GroupEm {
     public static HomePage hp;
-    //final static Container c = hp.getContentPane();
-    public static Panel pan;
+    //public static Panel pan;
     
     public static ArrayList<String> usernames = new ArrayList<>();
     public static ArrayList<String> passwords = new ArrayList<>();
     public static ArrayList<Event> eventss = new ArrayList<>();
-    //public static ArrayList<Event> userEvents = new ArrayList<>();
     public static String[] userEventNames = new String[0];
     public static String userPass;
     public static String userUsername;
@@ -44,8 +42,6 @@ public class GroupEm {
         passwords.add("w");
         
         
-        
-        
         Event one = new Event("Carnival", "walter", "State Fair trip 2k18", "11/30/18");
         one.addInvitee("walter");
         one.addInvitee("ian");
@@ -57,7 +53,7 @@ public class GroupEm {
         
         
 
-        Event two = new Event("Hot Dog Contest", "ian", "Fat Santa's Eating Extraviganza", "12/25/18");
+        Event two = new Event("Hot Dog Contest", "ian", "Fat Santa's Eating Extravaganza", "12/25/18");
         two.addInvitee("walter");
         two.addInvitee("ian");
         two.addInvitee("leigh");
@@ -92,18 +88,7 @@ public class GroupEm {
             }
         });
     log.setVisible(true);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+ 
     }
     
     public static Event getEvent(String eventName){
@@ -114,19 +99,6 @@ public class GroupEm {
     }
     
     public static void updateUserEvents(String user){
-//        int count = 0;
-//        for(Event e : eventss){
-//             if(e.invites.contains(user)) count++;
-//        }
-//        String[] temp = new String[count];
-//        for(int e = 0; e < temp.length; e++){
-//             if(eventss.get(e).invites.contains(user)) {
-//                // userEvents.add(eventss.get(e));
-//                 temp[e] = eventss.get(e).name;
-//             }
-//             
-//        }
-//        userEventNames = temp;
         int count = 0;
         ArrayList<String> templist = new ArrayList<>();
         for(Event e : eventss){

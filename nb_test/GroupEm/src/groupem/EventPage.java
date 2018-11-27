@@ -5,13 +5,16 @@
  */
 package groupem;
 
-import static groupem.GroupEm.hp;
 import static groupem.GroupEm.userUsername;
 
 /**
- *
- * @author walter
+ * Event Page for GroupEm
+ * CSC 3380 Project
+ * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Walker
+ * @since 11/27/18
+ * @see GroupEm, Login, Event, HomePage, CreatePage
  */
+
 public class EventPage extends javax.swing.JFrame{
     
     public static Event event;

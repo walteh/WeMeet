@@ -6,20 +6,22 @@
 package groupem;
 
 import static groupem.GroupEm.eventss;
-import static groupem.GroupEm.hp;
 import static groupem.GroupEm.updateUserEvents;
 import static groupem.GroupEm.userUsername;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+
 
 /**
- *
- * @author walter
+ * Create Event Page for GroupEm
+ * CSC 3380 Project
+ * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Walker
+ * @since 11/27/18
+ * @see GroupEm, Login, Event, HomePage, EventPage
  */
+
 public class CreateEventPage extends javax.swing.JFrame {
 
     /**
-     * Creates new form CreateEventPage
+     * Creates new CreateEventPage
      */
     public CreateEventPage() {
         initComponents();
@@ -147,19 +149,16 @@ public class CreateEventPage extends javax.swing.JFrame {
         hp9.setSize(451,487);
         hp9.setLocationRelativeTo(this);
         hp9.setVisible(true);
-        //hp9.pack();
     }//GEN-LAST:event_createButtonActionPerformed
 
     private void cancelCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelCreateActionPerformed
-        //setVisible(false);
+
         dispose();
         HomePage hp1 = new HomePage();
         hp1.setResizable(false);
         hp1.setSize(451,487);
         hp1.setLocationRelativeTo(this);
         hp1.setVisible(true);
-        //hp1.pack();
-        
     }//GEN-LAST:event_cancelCreateActionPerformed
 
     private void big_G_create_pageComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_big_G_create_pageComponentMoved

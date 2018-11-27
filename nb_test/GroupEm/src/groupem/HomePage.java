@@ -5,37 +5,25 @@
  */
 package groupem;
 
-import static groupem.GroupEm.eventss;
 import static groupem.GroupEm.getEvent;
 import static groupem.GroupEm.userUsername;
 import static groupem.GroupEm.loggedIn;
-import static groupem.GroupEm.pan;
 import static groupem.GroupEm.userEventNames;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.ListModel;
-import javax.swing.event.ListDataListener;
 
 /**
- *
- * @author walter
+ * Home Page for GroupEm
+ * CSC 3380 Project
+ * @author Walter Scott, Ian Andrepont, Leigh Wright, Scott Walker
+ * @since 11/27/18
+ * @see GroupEm, Login, Event, EventPage, CreatePage
  */
+
 public class HomePage extends javax.swing.JFrame {
-    
-    //public static ArrayList<Event> events = new ArrayList<>();
-    
-    
 
     /**
-     * Creates new form HomePage
+     * Creates new HomePage
      */
     public HomePage() {
         initComponents();
@@ -235,27 +223,7 @@ public class HomePage extends javax.swing.JFrame {
         
         
     }
-    
-    public static void updateEvents(){
-//        for (Event e : events) {
-//            JButton event = new JButton(e.name);
-//            event.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                //try{
-//                    
-////                } catch (IOException ex) {
-////                    
-////                }
-//                
-//                // The BasicContainer bc2 must request the focus
-//                // otherwise, it can't get keyboard events.
-//                
-//            }
-//        });
-//        event.setVisible(true);
-//        }
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
